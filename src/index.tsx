@@ -3,8 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import counterReducer from "./Redux/Reducer/counterReducer";
+import {Provider} from "react-redux";
+import ConnectedCounter  from "./Components/Buttons/ConnectedCounter";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store ={counterReducer}>
+    <ConnectedCounter/>
+    </Provider>,
+    document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
